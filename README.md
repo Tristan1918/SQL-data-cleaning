@@ -40,3 +40,28 @@ UPDATE club_member_info_clean SET full_name = UPPER(full_name)
 ```sql
 UPDATE club_member_info_clean SET full_name = TRIM(full_name)
 ```
+
+## Chuyển đổi các giá trị trống và giá trị phi thực tế trong cột age thành 45 (trung bình)
+```sql
+UPDATE club_member_info_clean SET age = 45 WHERE  age > 68 OR age ISNULL
+```
+
+## Chỉnh sửa giá trị lỗi trong cột martial_status
+```sql
+UPDATE club_member_info_clean SET martial_status = 'divorced' WHERE martial_status = 'divored'
+```
+
+## Chuyển đổi các giá trị trống trong cột martial_staus thành married (trung vị)
+```sql
+UPDATE club_member_info_clean SET martial_status = 'married'  WHERE martial_status = ''
+```
+
+## Chuyển đổi các giá trị trống trong cột phone thành Unknown
+```sql
+UPDATE club_member_info_clean SET martial_status = 'married'  WHERE martial_status = ''
+```
+
+## Chuyển đổi các giá trị trống trong cột job_title thành Unknown
+```sql
+UPDATE club_member_info_clean SET job_title = 'Unknown' WHERE job_title  = ''
+```
