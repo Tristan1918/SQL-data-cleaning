@@ -23,3 +23,20 @@ CREATE TABLE club_member_info_clean (
 	membership_date VARCHAR(50)
 );
 ```
+
+## Lấy dữ liệu từ bảng gốc
+
+```sql
+INSERT INTO club_member_info_clean
+select * from club_member_info
+```
+
+## Chuyển đổi dữ liệu cột full_name thành chữ in hoa
+```sql
+UPDATE club_member_info_clean SET full_name = UPPER(full_name)
+```
+
+## Loại bỏ khoảng trống trong dữ liệu cột full_name 
+```sql
+UPDATE club_member_info_clean SET full_name = TRIM(full_name)
+```
